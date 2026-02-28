@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller API Test</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .result { margin-top: 10px; padding: 10px; background: #f0f0f0; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Dice Roller API Tester</h1>
+    <p>This page tests the RESTful APIs but does NOT implement the Dice Roller application UI.</p>
+
+    <button onclick="testWakeUp()">Test Wake Up API</button>
+    <button onclick="testRoll()">Test Roll API (d20)</button>
+
+    <div id="output" class="result">Results will appear here...</div>
+
+    <script>
+        async function testWakeUp() {
+            const res = await fetch('/api/wakeup');
+            const data = await res.json();
+            document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+        }
+
+        async function testRoll() {
+            const res = await fetch('/api/roll?sides=20');
+            const data = await res.json();
+            document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
