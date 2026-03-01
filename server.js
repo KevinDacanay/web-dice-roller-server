@@ -4,8 +4,10 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Serve static files (the API test page)
-app.use(express.static(path.join(__dirname, 'public')));
+// Route for the root to serve the API test page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // --- RESTful APIs ---
 
