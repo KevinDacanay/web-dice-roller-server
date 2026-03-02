@@ -1,3 +1,6 @@
+// Author: Kevin Dacanay 
+// CPSC 44000 - Software Engineering
+// Project: Web Dice Roller Server
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
