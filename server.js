@@ -26,7 +26,7 @@ app.get('/api/roll', cors(), (req, res) => {
 // 3. CORS Failure API
 // This endpoint intentionally does NOT have CORS enabled to demonstrate failure
 app.get('/api/cors-fail', (req, res) => {
-    res.json({ message: 'If you see this in the browser console from a different origin, CORS failed to block it.' });
+    res.json({ message: 'CORS fail example.' });
 });
 
 app.listen(port, () => {
